@@ -11,10 +11,9 @@ defmodule TestHelper do
   end
 
   defmacro assert_verb_parse_encode(binary, expected_verb) do
-    quote bind_quoted: [
-        binary: binary,
-        expected_verb: expected_verb
-      ] do
+    quote do
+      binary = unquote(binary)
+      expected_verb = unquote(expected_verb)
       assert {:ok, verb, "", _} = Nats.Parser.parse(binary)
       assert verb == expected_verb
       out = encode(verb)
