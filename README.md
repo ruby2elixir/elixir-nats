@@ -44,7 +44,7 @@ You can override the configuration by passing a map to `Client.start_link`. For 
 
 ```elixir
   alias Nats.Client
-  
+
   nats_conf = %{host: "some-host", port: 3222,
                 tls_required: true,
                 auth: %{ user: "some-user", pass: "some-pass"}}
@@ -81,4 +81,6 @@ $ cat examples/*.exs
 
 [License](LICENSE)
 
-Copyright 2016 Apcera Inc. All rights reserved. 
+Copyright 2016 Apcera Inc. All rights reserved.
+
+
